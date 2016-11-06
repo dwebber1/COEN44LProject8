@@ -1,0 +1,11 @@
+﻿  lab8.cpp
+c:\users\daniel webber\documents\visual studio 2015\projects\lab8\lab8\lab8.cpp(90): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\daniel webber\documents\visual studio 2015\projects\lab8\lab8\lab8.cpp(90): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\daniel webber\documents\visual studio 2015\projects\lab8\lab8\lab8.cpp(90): note: the missing variadic argument 2 is required by format string '%c'
+  c:\users\daniel webber\documents\visual studio 2015\projects\lab8\lab8\lab8.cpp(90): note: this argument is used as a buffer size
+c:\users\daniel webber\documents\visual studio 2015\projects\lab8\lab8\lab8.cpp(159): warning C4473: 'scanf_s' : not enough arguments passed for format string
+  c:\users\daniel webber\documents\visual studio 2015\projects\lab8\lab8\lab8.cpp(159): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\daniel webber\documents\visual studio 2015\projects\lab8\lab8\lab8.cpp(159): note: the missing variadic argument 2 is required by format string '%c'
+  c:\users\daniel webber\documents\visual studio 2015\projects\lab8\lab8\lab8.cpp(159): note: this argument is used as a buffer size
+  lab8.vcxproj -> C:\Users\Daniel Webber\Documents\Visual Studio 2015\Projects\lab8\Debug\lab8.exe
+  lab8.vcxproj -> C:\Users\Daniel Webber\Documents\Visual Studio 2015\Projects\lab8\Debug\lab8.pdb (Full PDB)
