@@ -13,18 +13,24 @@ This program is designed to be a system to reserve hotel rooms with complex func
 #include <stdio.h>// Needed for printf_s()
 #include <stdlib.h>// Needed for system()
 #include <string.h> //needed to deal with strings
+//I used https://www.tutorialspoint.com/c_standard_library/string_h.htm to learn how to use the string functions in my program 
 
 #define SIZE 10 //10 rooms for the system
 #define STRINGSIZE 15
 //function protoype
+//room reservation function passes a ptr in for the main function to call all of the sub functions returns an int to tell the main if it should exectute the promt again
 int userPrompt(char *command);
 
-void roomReservation(int reservationArray[SIZE], char reservationName[SIZE][STRINGSIZE], int *id,  int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE],int *resID);
+//room reservation function. I pass in the reservation arrays and associated name array, i pass a ptr to keep track of ids, i pass in the waitlist arrays an a ptr to keep track of the waitlist
+void roomReservation(int reservationArray[SIZE], char reservationName[SIZE][STRINGSIZE], int *id,  int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE],int *resID); 
 
+//list reservation function. I pass in the reservation arrays and associated name array i pass in the waitlist arrays 
 void listReservations(int reservationArray[SIZE], char reservationName[SIZE][STRINGSIZE], int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE]);
 
+//room cancelation function. I pass in the reservation arrays and associated name array, i pass a ptr to keep track of ids, i pass in the waitlist arrays an a ptr to keep track of the waitlist
 void roomCancelation(int reservationArray[SIZE], char reservationName[SIZE][STRINGSIZE], int *id, int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE], int *resID);
 
+//waitlist cancelation i pass a ptr for the id of the user and the arrays for the waitlist and a ptr for the waitlist to know how many people are in the waitlist.
 void waitCancelation(int *id, int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE], int *resID);
 //reservation array and reservation name array associated with it
 
@@ -143,7 +149,7 @@ void roomReservation(int reservationArray[SIZE], char reservationName[SIZE][STRI
 		}
 	}
 	if (roomAvail == 1) {
-
+		//prompt user if room is free
 		printf_s("Enter Your name\n");
 		scanf_s("%s", nameString,STRINGSIZE);
 		printf_s("Your room is: %d and your ID is: %d\n", freeRoom, *id);
@@ -172,6 +178,7 @@ void roomReservation(int reservationArray[SIZE], char reservationName[SIZE][STRI
 		}		
 	}
 }
+
 void listReservations(int reservationArray[SIZE], char reservationName[SIZE][STRINGSIZE], int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE]) {
 	printf_s("Rooms Reserved:\t\t\t\tWait List:\n");
 	printf_s("%-20s%-20s%-21s%s","Reservation ID","Name","Reservation ID", "Name" );
@@ -263,15 +270,3 @@ void waitCancelation(int * id, int waitlistArray[SIZE], char waitlistName[SIZE][
 		printf_s("ID NOT FOUND!\n");
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
