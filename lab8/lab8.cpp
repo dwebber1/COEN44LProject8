@@ -245,8 +245,7 @@ void roomCancelation(int reservationArray[SIZE], char reservationName[SIZE][STRI
 void waitCancelation(int * id, int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE], int * resID)
 {
 
-
-	int notfound = 0;
+	int notfound = 0; //locals to keep track of stuff 
 	int reservationID;
 	printf("Enter you reservation ID to cancel :\n");
 	scanf_s("%d", &reservationID);
@@ -255,7 +254,7 @@ void waitCancelation(int * id, int waitlistArray[SIZE], char waitlistName[SIZE][
 			notfound = 0;
 			for ( int j = i; j < (SIZE-1); j++) {
 				waitlistArray[j] = waitlistArray[j+1];
-				strcpy_s(waitlistName[j], waitlistName[j+1]);
+				strcpy_s(waitlistName[j], waitlistName[j+1]); //re assigning and shufling of the arrays
 				waitlistArray[j+1] = 0;
 				strcpy_s(waitlistName[j+1], "Null");
 
