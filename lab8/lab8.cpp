@@ -14,14 +14,17 @@ This program is designed to be a system to reserve hotel rooms with complex func
 #include <stdlib.h>// Needed for system()
 #include <string.h> //needed to deal with strings
 
-
 #define SIZE 10 //10 rooms for the system
 #define STRINGSIZE 15
 //function protoype
 int userPrompt(char *command);
+
 void roomReservation(int reservationArray[SIZE], char reservationName[SIZE][STRINGSIZE], int *id,  int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE],int *resID);
+
 void listReservations(int reservationArray[SIZE], char reservationName[SIZE][STRINGSIZE], int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE]);
+
 void roomCancelation(int reservationArray[SIZE], char reservationName[SIZE][STRINGSIZE], int *id, int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE], int *resID);
+
 void waitCancelation(int *id, int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE], int *resID);
 //reservation array and reservation name array associated with it
 
@@ -202,6 +205,7 @@ void roomCancelation(int reservationArray[SIZE], char reservationName[SIZE][STRI
 			if (waitlistArray[0] != 0) {
 				reservationArray[i] = waitlistArray[0]; //set id of person on waitlist to the room just canceled
 				strcpy_s(reservationName[i], waitlistName[0]); //copy the name of the person on the waitlist to reservation list
+				printf_s("The id is: %d is now off the waitlist and is in room: %d\n", reservationArray[i], (i+1));
 
 				for (int j = 1; j < SIZE; j++) {
 					waitlistArray[j - 1] = waitlistArray[j];
@@ -228,9 +232,7 @@ void roomCancelation(int reservationArray[SIZE], char reservationName[SIZE][STRI
 			notfound = 1;
 	}
 	if (notfound == 1)
-		printf_s("ID NOT FOUND!\n");
-			
-		
+		printf_s("ID NOT FOUND!\n");		
 }
 
 void waitCancelation(int * id, int waitlistArray[SIZE], char waitlistName[SIZE][STRINGSIZE], int * resID)
