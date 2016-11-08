@@ -16,7 +16,7 @@ This program is designed to be a system to reserve hotel rooms with complex func
 //I used https://www.tutorialspoint.com/c_standard_library/string_h.htm to learn how to use the string functions in my program 
 
 #define SIZE 10 //10 rooms for the system
-#define STRINGSIZE 15
+#define STRINGSIZE 15 //15 char for the string 14 for char and 1 for null
 //function protoype
 //room reservation function passes a ptr in for the main function to call all of the sub functions returns an int to tell the main if it should exectute the promt again
 int userPrompt(char *command);
